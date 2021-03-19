@@ -1,0 +1,69 @@
+<div class="dashboard">
+    <p>Dashboard</p>
+    <div class="payments">
+        <div class="sec">
+            <div>
+                <p>~Monthly Payments</p>
+                <p>$ 15,000.00</p>
+            </div>
+            <div>
+                <p>For How Long</p>
+                <p>36 Months</p>
+            </div>
+        </div>
+        <div class="sec">
+            <div>
+                <p>Total Statement Due</p>
+                <p>$ 1,215,000.00</p>
+            </div>
+            <div>
+                <p>EMIs This Month</p>
+                <p>3 EMIs</p>
+            </div>
+        </div>
+    </div>
+    <div class="creditScore">
+        <p>Credit Score</p>
+        <p>Last Updated on 12-03-2021</p>
+        <p class="score">750</p>
+        <div class="progress">
+            <div class="filledStatus"></div>
+        </div>
+    </div>
+    <p class="reminder">Reminder</p>
+    <div class="americanExpress">
+        <p>American Express</p>
+        <div class="more">
+            <p>More</p>
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </div>
+        <p>Housing Loan</p>
+        <div class="amountTxt">
+            <p>Amount Due</p>
+            <p>Interest Rate</p>
+        </div>
+        <div class="amount">
+            <p>$400.00</p>
+            <p>8.00%</p>
+        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <div class="notification">
+                    <span class="material-icons">
+                        notifications
+                    </span>
+                </div>
+                <p class="notifyTxt">{{slide.reminder}}</p>
+                <p>Due Date</p>
+                <p class="date">Mar 12</p>
+                <p>Make Payment Within <span>3 Days</span> To Avoid Late Fees.</p>
+            </div>
+        </ngx-slick-carousel>
+        <div class="btns">
+            <p [ngClass]="remindLaterEnabled ? 'enabled':'disabled'" (click)="remindNow()">Remind me later</p>
+            <p [ngClass]="payNowEnabled ? 'enabled':'disabled'" (click)="payNow()">Pay now</p>
+        </div>
+    </div>
+</div>

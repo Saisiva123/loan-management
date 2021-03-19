@@ -1,0 +1,40 @@
+<div class="loans">
+    <p>Loans</p>
+ 
+    <div class="americanExpress">
+        <p>American Express</p>
+        <div class="more">
+            <p>More</p>
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </div>
+        <p>Housing Loan</p>
+        <div class="amountTxt">
+            <p>Amount Due</p>
+            <p>Interest Rate</p>
+        </div>
+        <div class="amount">
+            <p>$400.00</p>
+            <p>8.00%</p>
+        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <div class="notification">
+                    <span class="material-icons">
+                        notifications
+                    </span>
+                </div>
+                <p class="notifyTxt">{{slide.reminder}}</p>
+                <p>Due Date</p>
+                <p class="date">Mar 12</p>
+                <p>Make Payment Within <span>3 Days</span> To Avoid Late Fees.</p>
+            </div>
+        </ngx-slick-carousel>
+        <div class="btns">
+            <p [ngClass]="remindLaterEnabled ? 'enabled':'disabled'" (click)="remindNow()">Remind me later</p>
+            <p [ngClass]="payNowEnabled ? 'enabled':'disabled'" (click)="payNow()">Pay now</p>
+        </div>
+    </div>
+   
+</div>
